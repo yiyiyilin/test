@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./turnPage.css">
+    <style>
+        .demo {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1.每一页的条数 onepageSize
+        2.当前页  current
+        3.总页数：Math.ceil(数据总量/每一页的条数) allPage 
+                 数据总量 allSize
+     -->
+    <div id="demo"></div>
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="./turnPage.js"></script>
+    <script>
+        $('#demo').Page({
+            onepageSize:10,
+            current:6,
+            //allSize:100,
+            allPage:10,
+            changePage:function(current,pagesize){
+                   console.log(current,pagesize);
+            }
+        })
+    </script>
+</body>
+
+</html>

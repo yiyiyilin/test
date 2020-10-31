@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <form action="#" id="registe">
+        <h2>注册
+            <a href="./login.html">登录</a>
+        </h2>
+        <div>
+            <label for="username">用户名</label>
+            <input type="text" id="username">
+        </div>
+        <div>
+            <label for="account">账号</label>
+            <input type="text" id="account">
+        </div>
+        <div>
+            <label for="password">密码</label>
+            <input type="password" id="password">
+        </div>
+        <div>
+            <label for="repassword">确认密码</label>
+            <input type="password" id="repassword">
+        </div>
+        <div>
+            <label for=""></label>
+            <button class="btn" id="registebtn">提交</button>
+            <input type="reset" class="btn">
+        </div>
+    </form>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script>
+        $('#registebtn').click(function (e) {
+            e.preventDefault();
+            var form = $('#registe')[0];
+            var username = form.username.value;
+            var account = form.account.value;
+            var password = form.password.value;
+            var repassword = form.repassword.value;
+            if (username && password && account && repassword) {
+                if (password == repassword) {
+                    $.ajax({
+                        url: 'http://open.duyiedu.com/api/student/stuRegister',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            appkey: 'yilin10_1590726255501',
+                            account: account,
+                            username: username,
+                            password: password,
+                            rePassword: repassword,
+                        },
+                        success: function (res) {
+                            if(res.status == 'success'){
+                                alert(res.msg)
+                                location.href = './login.html';
+                            }else if(res.status == 'fail'){
+                                alert(res.msg);
+                            }
+                            console.log(res);
+                        }
+                    })
+                }
+
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

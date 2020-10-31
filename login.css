@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    width: 400px;
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 100px auto;
+    text-align: center;
+}
+h2>a{
+    font-size: 14px;
+}
+form div{
+    margin: 20px 0;
+}
+form label{
+    display: inline-block;
+    width: 100px;
+    margin-right: 5px;
+    text-align: right;
+}
+form .btn{
+    padding: 5px 25px;
+}

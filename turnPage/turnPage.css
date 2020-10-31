@@ -1,0 +1,46 @@
+.my-page > *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.my-page{
+    border: 1px solid black;
+}
+
+.my-page-size{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.my-turn-page{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.my-turn-page li,
+.my-turn-page span{
+    float: left;
+    cursor: pointer;
+}
+
+.my-turn-page .my-page-prev,
+.my-turn-page .my-page-next{
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 0px 5px;
+}
+
+.my-turn-page li{
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin: 0px 5px;
+}
+
+.current-page{
+    background-color: #428bca;
+    color: #fff;
+}
+
+
+
